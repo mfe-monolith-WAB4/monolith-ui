@@ -1,0 +1,77 @@
+:root {
+    --bg: #f7f9fb;         /* sehr helles Grau als Hintergrund */
+    --card: #ffffff;       /* Karten sind weiß */
+    --text: #1e293b;       /* dunkles Grau für Text */
+    --muted: #64748b;      /* dezentes Grau für Untertitel */
+    --brand: #3b82f6;      /* modernes Blau (Akzent) */
+    --border: #e2e8f0;     /* helles Grau für Umrandungen */
+}
+
+
+
+html,body,#root{height:100%}
+body{
+    margin:0; font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg); color: var(--text);
+}
+
+/* Layout */
+.app-shell{
+    display:grid; grid-template-rows: auto 1fr auto; height:100vh;
+}
+.navbar, .footer{
+    padding: 14px 20px;
+    font-size: 40px;
+    background: rgba(255,255,255,0.02);
+    border-bottom: 1px solid var(--border);
+}
+.footer{ border-top: 1px solid var(--border); border-bottom:none }
+
+/* Cards */
+.card{
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    overflow: hidden;
+}
+.card-header{
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    display:flex; align-items:center; gap:10px;
+}
+.card-header h2{
+    margin:0; font-size: 18px; letter-spacing:.2px;
+}
+.card-body{ position:relative; padding: 18px; min-height: 180px; }
+
+/* Loader overlay */
+.loader{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    background: rgba(0,0,0,0);
+    backdrop-filter: blur(1px);
+}
+.spinner{
+    width: 34px; height: 34px; border-radius: 50%;
+    border: 3px solid rgba(255,255,255,0.25);
+    border-top-color: var(--brand);
+    animation: spin 0.9s linear infinite;
+}
+@keyframes spin{ to { transform: rotate(360deg) } }
+
+/* Tables & lists inside MFEs */
+.table{
+    width:100%; border-collapse: collapse; font-size: 15px;
+}
+.table td{ padding:10px 8px; border-bottom: 1px solid var(--border) }
+.table tr:last-child td{ border-bottom: none }
+ul.clean{ margin:0; padding-left: 1.2rem }
+ul.clean li{ margin: .35rem 0 }
+.muted{ color: var(--muted) }
+
+
+.mfe-news > *, .mfe-grades > * { /* Escaping # for safety in some bundlers */
+    animation: fadeIn .25s ease-out;
+}
+@keyframes fadeIn { from {opacity:0; transform: translateY(4px)} to {opacity:1; transform:none} }
