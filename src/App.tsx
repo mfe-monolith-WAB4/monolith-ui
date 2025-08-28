@@ -39,7 +39,7 @@ export default function App() {
     const [loadingGrades, setLoadingGrades] = useState(true)
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/news')
+        fetch('https://bff.wab4.jf-homelab.de/api/news')
             .then((r) => (r.ok ? r.json() : []))
             .then(setNews)
             .catch(() => setNews([{ id: 1, title: 'Demo News (fallback)' }]))
@@ -47,7 +47,7 @@ export default function App() {
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/grades')
+        fetch('https://bff.wab4.jf-homelab.de/api/grades')
             .then((r) => (r.ok ? r.json() : []))
             .then(setGrades)
             .catch(() => setGrades([{ course: 'Math', grade: '1.7 (demo)' }]))
