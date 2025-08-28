@@ -56,7 +56,7 @@ export default function App() {
 
     return (
         <div className="app-shell">
-            <nav className="navbar">Navigation</nav>
+            <nav className="navbar">Hello Wolrd!</nav>
 
             <main style={{ padding: 20, display: 'grid', gap: 20 }}>
                 <SectionCard title="News" loading={loadingNews}>
