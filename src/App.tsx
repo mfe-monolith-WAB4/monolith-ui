@@ -99,25 +99,22 @@ export default function App() {
                 <NavLink
                     to="/"
                     end
-                    style={({ isActive }) => ({
+                    style={{
                         textDecoration: "none",
-                        color: isActive ? "#000" : "#555",
-                        fontWeight: isActive ? "bold" : "normal",
+                        color: "#000",
                         fontSize: "30px",
-                    })}
+                    }}
                 >
                     News
                 </NavLink>
 
                 <NavLink
                     to="/grades"
-                    style={({ isActive }) => ({
+                    style={{
                         textDecoration: "none",
-                        color: isActive ? "#000" : "#555",
-                        fontWeight: isActive ? "bold" : "normal",
+                        color: "#000",
                         fontSize: "30px",
-
-                    })}
+                    }}
                 >
                     Grades
                 </NavLink>
