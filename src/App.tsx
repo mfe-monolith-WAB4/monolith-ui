@@ -87,7 +87,7 @@ export default function App() {
                 style={{
                     display: "flex",
                     alignItems: "flex-end",
-                    gap: "1rem",
+                    gap: "30px",
                     padding: "10px 20px",
                     background: "#f5f5f5",
                     borderBottom: "1px solid #ddd",
